@@ -12,13 +12,11 @@ function handleMessage(buffer) {
     const response = `${str}IP:${ip.address()}\nPort:${this.server.address().port}\nStudentID:13323304\n`;
 
     this.write(response);
-    this.destroy();
   } else if (str.startsWith('KILL_SERVICE\n')) {
     this.destroy();
     process.exit(0);
   } else {
     this.write('Invalid command');
-    this.destroy();
   }
 }
 
