@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eoin Houlihan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ip": "^1.1.4"
+  }
 }

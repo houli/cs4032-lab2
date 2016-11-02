@@ -1,3 +1,4 @@
+const ip = require('ip');
 const net = require('net');
 
 const server = net.createServer((socket) => {
@@ -5,7 +6,22 @@ const server = net.createServer((socket) => {
 });
 
 function handleMessage(buffer) {
-  console.log(buffer.toString());
+  const str = buffer.toString();
+
+  if (str.startsWith('HELO ')) {
+    const response = `${str}IP:${ip.address()}\nPort:${this.server.address().port}\nStudentID:13323304\n`;
+
+    this.write(response);
+    this.destroy();
+  } else if (str.startsWith('KILL_SERVICE\n')) {
+    this.destroy();
+    process.exit(0);
+  } else {
+    this.write('Invalid command');
+    this.destroy();
+  }
 }
 
-server.listen(process.argv[2]);
+server.listen(process.argv[2], function() {
+  console.log(`Server listening on port ${this.address().port}`);
+});
