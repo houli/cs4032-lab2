@@ -15,8 +15,6 @@ function handleMessage(buffer) {
   } else if (str.startsWith('KILL_SERVICE\n')) {
     this.destroy();
     process.exit(0);
-  } else {
-    this.write('Invalid command');
   }
 }
 
