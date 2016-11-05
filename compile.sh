@@ -1,6 +1,6 @@
 #!/bin/bash
-if hash npm 2>/dev/null; then
-    npm install
+if hash bundle 2>/dev/null; then
+    bundle install
 else
-    echo "Please ensure you have Node.js installed https://nodejs.org/ and run this script again"
+    echo "Please install bundler(https://bundler.io) with `gem install bundler` and run this script again"
 fi

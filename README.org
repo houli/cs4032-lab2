@@ -1,7 +1,7 @@
 #+TITLE: CS4032 Lab 2
 #+OPTIONS: toc:nil
 
-Please ensure you have [[https://nodejs.org][Node.js]] installed.
+Please ensure you have [[https://ruby-lang.org][Ruby]] and [[https://bundler.io][Bundler]] installed.
 ** Installing Dependencies
 #+BEGIN_SRC bash
 $ ./compile.sh

@@ -1,8 +1,6 @@
 #!/bin/bash
-if hash node 2>/dev/null; then
-    node index.js "$@"
-elif hash nodejs 2>/dev/null; then
-    nodejs index.js "$@"
+if hash bundle 2>/dev/null; then
+    bundle exec ruby app.rb "$@"
 else
-    echo "Please ensure you have Node.js installed https://nodejs.org/ and run this script again"
+    echo "Please install bundler(https://bundler.io) with `gem install bundler` and run this script again"
 fi
